@@ -17,9 +17,13 @@ function changeResistorColor() {
             value *= 10;
         }
         if (bands == 4) {
-            
-            first = parseInt(current[0].toString()[0]);
-            if (current[0] < 10) {
+            if (current[0] >= 10) {
+                first = parseInt(current[0].toString()[0]);
+                second = parseInt(current[0].toString()[1]);
+                third = current[1];
+            }
+
+            else {
                 if (current[1] == 0) {
                     first = current[0];
                     second = 0;
@@ -31,18 +35,13 @@ function changeResistorColor() {
                     third = current[1] - 1;
                 }
             }
-
-            else {
-                second = parseInt(current[0].toString()[1]);
-                third = current[1];
-            }
             
             document.getElementById("resdiv").style.backgroundColor = "#e8caa2";
             
             document.getElementById("band4").style.backgroundColor = "transparent";
         }
         else {
-            if (current[0] > 100) {
+            if (current[0] >= 100) {
                 first = parseInt(current[0].toString()[0]);
                 second = parseInt(current[0].toString()[1]);
                 third = parseInt(current[0].toString()[2]);
@@ -50,7 +49,7 @@ function changeResistorColor() {
 
             }
 
-            else if (current[0] > 10) {
+            else if (current[0] >= 10) {
                 if (current[1] == 0) {
                     first = parseInt(current[0].toString()[0]);
                     second = parseInt(current[0].toString()[1]);
@@ -160,4 +159,5 @@ input.addEventListener('keypress', function(e) {
     if (e.key == "Enter") {
         changeResistorColor();
     }
+
 });
