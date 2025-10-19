@@ -125,7 +125,7 @@ function genResistor(bands) {
 }
 
 function colourMatch(colour) {
-    const colours = ["black", "#875100", "red", "#ff8000", "yellow", "green", "blue", "purple", "grey", "white", "#d4af37", "#bcc6cc+"];
+    const colours = ["black", "#522600", "red", "#ff8000", "yellow", "green", "blue", "purple", "grey", "white", "#d4af37", "#bcc6cc+"];
     if (colour < 0) {
         return "black";
     }
@@ -161,3 +161,4 @@ input.addEventListener('keypress', function(e) {
     }
 
 });
+
