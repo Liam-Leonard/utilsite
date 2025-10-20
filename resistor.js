@@ -9,9 +9,7 @@ function changeResistorColor() {
     var fourth;
     if (value == parseAnswer() || current == 0) {
         bands = Math.floor(Math.random() * 2) + 4;
-        console.log(`${bands}`);
         current = genResistor(bands);
-        console.log(`${current}`);
         value = current[0];
         for (let i = 0; i < current[1]; i++) {
             value *= 10;
@@ -91,19 +89,12 @@ function changeResistorColor() {
         document.getElementById("band1").style.backgroundColor = colourMatch(first);
         document.getElementById("band2").style.backgroundColor = colourMatch(second);
         document.getElementById("band3").style.backgroundColor = colourMatch(third);
-        console.log(`${value}`);
-        console.log(`first | ${first} | ${colourMatch(first)}`);
-        console.log(`second | ${second} | ${colourMatch(second)}`);
-        console.log(`third | ${third} | ${colourMatch(third)}`);
-        console.log(`fourth | ${fourth} | ${colourMatch(fourth)}`);
         input.classList.add('right');
         setTimeout(() => {
         input.classList.remove('right');
         }, 750);
     }
     else {
-        console.log("Wrong answer");
-        console.log(`Correct answer is ${value}`);
         input.classList.add('wrong');
         setTimeout(() => {
         input.classList.remove('wrong');
@@ -161,4 +152,5 @@ input.addEventListener('keypress', function(e) {
     }
 
 });
+
 
